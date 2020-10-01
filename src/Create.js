@@ -65,7 +65,7 @@ const Create = () => {
     getFirebase()
       .database()
       .ref()
-      .child(`posts/${slug}`)
+      .child(`slug ? posts/${slug} : "noslug"`)
       .set(newPost)
       .then(() => history.push(`/`));
   };
