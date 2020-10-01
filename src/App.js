@@ -6,6 +6,7 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Home from "./Home";
 import Post from "./Post";
+import Create from "./Create";
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(requests.allPosts);
@@ -18,7 +19,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Nav setSelectedOption={setSelectedOption} />
-            <Home selectedOption={selectedOption} />
+            <Home selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+          </Route>
+          <Route path="/create">
+            <Create />
           </Route>
           <Route path="/:slug">
             <Post selectedOption={selectedOption} />

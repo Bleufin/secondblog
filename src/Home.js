@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { getFirebase } from "./firebase";
 import Posts from "./Posts";
+import { Redirect } from "react-router-dom";
 
-function Home({ selectedOption }) {
+function Home({ selectedOption, setSelectedOption }) {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,11 @@ function Home({ selectedOption }) {
 
   if (loading) {
     return <h1>Loading...</h1>;
+  }
+
+  if (selectedOption === "create") {
+    setSelectedOption("allPosts");
+    return <Redirect to="/create" />;
   }
 
   return <Posts posts={posts} />;
