@@ -1,0 +1,29 @@
+.postcard {
+  color: white;
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  transition: transform 100ms;
+}
+
+.postcard:hover {
+  transform: scale(1.09);
+}
+
+.postcard > img {
+  height: 300px;
+  object-fit: fill;
+  width: 500px;
+}
+
+.postcard__stats {
+  display: none;
+}
+
+.postcard:hover > .postcard__stats {
+  display: inline;
+}
+
+.postcard > h2 {
+  padding-top: 10px;
+}

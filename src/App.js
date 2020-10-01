@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import requests from "./requests";
+import Header from "./Header";
+import Nav from "./Nav";
+import Home from "./Home";
+import Post from "./Post";
 
 function App() {
+  const [selectedOption, setSelectedOption] = useState(requests.allPosts);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+
+        <Switch>
+          <Route exact path="/">
+            <Nav setSelectedOption={setSelectedOption} />
+            <Home selectedOption={selectedOption} />
+          </Route>
+          <Route path="/:slug">
+            <Post selectedOption={selectedOption} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

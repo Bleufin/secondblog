@@ -1,0 +1,50 @@
+.post {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  align-items: center;
+}
+
+.post > img {
+  height: 300px;
+  object-fit: fill;
+  width: 680px;
+}
+
+.post > p {
+  margin-top: 42px;
+  max-width: 680px;
+  font-weight: 400;
+  font-size: 21px;
+  font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(41, 41, 41, 1);
+  letter-spacing: -0.003em;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-height: 32px;
+}
+
+.post > h1 {
+  max-width: 680px;
+  font-weight: 400;
+  font-size: 48px;
+  font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(41, 41, 41, 1);
+  letter-spacing: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-height: 60px;
+  margin-top: 26.4px;
+}
+
+.post .date {
+  display: flex;
+  min-width: 680px;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
